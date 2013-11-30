@@ -5,17 +5,17 @@
 package nl.rfpels.experiments;
 
 /**
- * A class to test names on
+ * A class to test class names on
  */
 public class ClassyName {
 
-    public String getMyName() {
+    public final String getMyName() {
         return getClass().getName();
     }
-    public String getMyCanonicalName() {
+    public final String getMyCanonicalName() {
         return getClass().getCanonicalName();
     }
-    public String getMySimpleName() {
+    public final String getMySimpleName() {
         return getClass().getSimpleName();
     }
 

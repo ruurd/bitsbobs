@@ -14,7 +14,6 @@ import static org.junit.Assert.assertTrue;
 public class ImplementorTest {
     @Test
     public void testInstantiate() throws Exception {
-        Implementor implementor = new Implementor();
         assertNotNull("cannot instantiate", new Implementor());
     }
 
