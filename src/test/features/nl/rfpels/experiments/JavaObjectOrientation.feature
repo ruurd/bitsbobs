@@ -5,7 +5,7 @@ Feature: Java Object Orientation
     And the base type is in nl.rfpels.experiments
     And the derived type is in nl.rfpels.experiments
     Then I check if base type is a class
-    And I run a test to find out
+    Then I run a test to find out
 
   Scenario:
     Given I am a n00b Java programmer
@@ -13,4 +13,4 @@ Feature: Java Object Orientation
     And the base type is in nl.rfpels.experiments
     And the derived type is in nl.rfpels.experiments
     Then I check if base type is an interface
-    And I run a test to find out
+    Then I run a test to find out

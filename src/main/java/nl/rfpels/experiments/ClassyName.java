@@ -9,21 +9,15 @@ package nl.rfpels.experiments;
  */
 public class ClassyName {
 
-    public final String getMyName() {
-        return getClass().getName();
-    }
-    public final String getMyCanonicalName() {
-        return getClass().getCanonicalName();
-    }
-    public final String getMySimpleName() {
-        return getClass().getSimpleName();
+    public static String getMyName(Class clzz) {
+        return clzz.getName();
     }
 
-    public static void main(String[] args) {
-        ClassyName n = new ClassyName();
+    public static String getMyCanonicalName(Class clzz) {
+        return clzz.getCanonicalName();
+    }
 
-        System.out.println(n.getMyName());
-        System.out.println(n.getMyCanonicalName());
-        System.out.println(n.getMySimpleName());
+    public static String getMySimpleName(Class clzz) {
+        return clzz.getSimpleName();
     }
 }
