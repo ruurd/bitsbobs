@@ -8,7 +8,7 @@ import java.io.Reader;
 import java.io.Writer;
 
 /**
- * Pass it a freemarker template and the referenced data and get back the result
+ * Pass it a xsl template and the referenced data and get back the result
  */
 public class XslTransformProcessor {
 

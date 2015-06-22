@@ -20,13 +20,22 @@ public class FreemarkerProcessor {
     private Configuration configuration = null;
     private Template template = null;
 
+    public FreemarkerProcessor() {
+        configuration = new Configuration();
+        configuration.setObjectWrapper(new DefaultObjectWrapper());
+    }
+
+    public FreemarkerProcessor(Configuration configuration) {
+        this.configuration = configuration;
+    }
+
     public void process(Map<String, Object> data, Writer out, String templateName) throws ProcessorException {
         try {
             if (configuration == null) {
                 configuration = new Configuration();
                 configuration.setObjectWrapper(new DefaultObjectWrapper());
-                template = configuration.getTemplate(templateName);
             }
+            template = configuration.getTemplate(templateName);
             template.process(data, out);
         }
         catch (IOException iox) {
@@ -35,23 +44,5 @@ public class FreemarkerProcessor {
         catch (TemplateException tx) {
             throw new ProcessorException("Template exception while processing Freemarker template", tx);
         }
-    }
-
-    public void stupid(Map<String, Object> data, Writer out, String templateName) throws ProcessorException {
-        try {
-            configuration = new Configuration();
-            configuration.setObjectWrapper(new DefaultObjectWrapper());
-            template = configuration.getTemplate(templateName);
-            template.process(data, out);
-        } catch (IOException iox) {
-            throw new ProcessorException("IO exception while processing Freemarker template", iox);
-        } catch (TemplateException tx) {
-            throw new ProcessorException("Template exception while processing Freemarker template", tx);
-        }
-    }
-
-    public void reset() {
-        configuration = null;
-        template = null;
     }
 }
