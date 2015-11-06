@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// Copyright (c) 2014 Bureau Pels. All Rights Reserved.
+// Copyright (c) 2015 Bureau Pels. All Rights Reserved.
 //------------------------------------------------------------------------------
 package nl.rfpels.processors;
 
@@ -18,15 +18,13 @@ import java.util.Map;
 public class FreemarkerProcessor {
 
     private Configuration configuration = null;
-    private Template template = null;
 
     public FreemarkerProcessor() {
-        configuration = new Configuration();
-        configuration.setObjectWrapper(new DefaultObjectWrapper());
     }
 
     public FreemarkerProcessor(Configuration configuration) {
         this.configuration = configuration;
+        configuration.setObjectWrapper(new DefaultObjectWrapper());
     }
 
     public void process(Map<String, Object> data, Writer out, String templateName) throws ProcessorException {
@@ -35,7 +33,7 @@ public class FreemarkerProcessor {
                 configuration = new Configuration();
                 configuration.setObjectWrapper(new DefaultObjectWrapper());
             }
-            template = configuration.getTemplate(templateName);
+            Template template = configuration.getTemplate(templateName);
             template.process(data, out);
         }
         catch (IOException iox) {

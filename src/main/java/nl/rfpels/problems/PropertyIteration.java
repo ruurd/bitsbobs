@@ -3,14 +3,17 @@
 //------------------------------------------------------------------------------
 package nl.rfpels.problems;
 
-/**
- * Test to see if importing is OK. In other versions there is a squiggly on Test.is(42)
- */
-public class Test {
-    public static void main(String[] args) {
-        Test.is(42);
-    }
+import java.util.Properties;
 
-    public static <T> void is(T t) {
+/**
+ * Created by ruurd on 19/09/15.
+ */
+public class PropertyIteration {
+    public static void main(String[] args) {
+        Properties plist = new Properties();
+        plist.setProperty("localhost", "123");
+        plist.setProperty("localhost", "234");
+
+        plist.list(System.out);
     }
 }

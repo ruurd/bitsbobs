@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// Copyright (c) 2013 Bureau Pels. All Rights Reserved.
+// Copyright (c) 2015 Bureau Pels. All Rights Reserved.
 //------------------------------------------------------------------------------
 
 package nl.rfpels.experiments;
