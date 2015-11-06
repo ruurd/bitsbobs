@@ -3,6 +3,9 @@
 //------------------------------------------------------------------------------
 package nl.rfpels.problems;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -10,7 +13,10 @@ import java.math.RoundingMode;
  * A small experiment on rounding in BigDecimal
  */
 public class Rounding {
+    private static final Logger LOG = LoggerFactory.getLogger(Rounding.class);
+
     public static void main(String[] args) {
+
 
         BigDecimal left = new BigDecimal("1.222");
         BigDecimal rite = new BigDecimal("1.222");

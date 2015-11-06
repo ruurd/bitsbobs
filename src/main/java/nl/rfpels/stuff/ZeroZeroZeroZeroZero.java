@@ -3,16 +3,25 @@
 //------------------------------------------------------------------------------
 package nl.rfpels.stuff;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Uhm I don't know anymore. Oh. OK. It prints 5 zeroes.
  */
 public class ZeroZeroZeroZeroZero {
+    private static final Logger LOG = LoggerFactory.getLogger(ZeroZeroZeroZeroZero.class);
     int i = 0;
 
+    private ZeroZeroZeroZeroZero() {
+        //***NOP***
+    }
+
+    @SuppressWarnings("squid:S2123")
     void m() {
         for (int k = 0; k < 5; k++) {
             i = i++;
-            System.out.println(i);
+            LOG.info(String.valueOf(i));
         }
     }
 
@@ -23,6 +32,6 @@ public class ZeroZeroZeroZeroZero {
     public static void main(String[] args) {
         ZeroZeroZeroZeroZero z = new ZeroZeroZeroZeroZero();
         z.m();
-        System.out.println(z.getI());
+        LOG.info(String.valueOf(z.getI()));
     }
 }
