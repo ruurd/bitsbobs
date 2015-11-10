@@ -13,6 +13,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.8</jdk.version>
         <aspectj.version>1.8.7</aspectj.version>
         <joda-time.version>2.1</joda-time.version>
         <commons-io.version>2.4</commons-io.version>
@@ -25,6 +26,7 @@
         <cucumber-picocontainer.version>1.1.5</cucumber-picocontainer.version>
         <cucumber-junit.version>1.1.5</cucumber-junit.version>
         <selenium-java.version>2.37.1</selenium-java.version>
+        <selenium-maven-plugin.version>2.3</selenium-maven-plugin.version>
         <phantomjsdriver.version>1.1.0</phantomjsdriver.version>
     </properties>
 
@@ -112,14 +114,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>selenium-maven-plugin</artifactId>
-                <version>2.3</version>
+                <version>${selenium-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <phase>pre-integration-test</phase>
