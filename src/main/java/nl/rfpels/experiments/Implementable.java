@@ -5,7 +5,7 @@
 package nl.rfpels.experiments;
 
 /**
- * An interface
+ * An interface.
  */
 public interface Implementable {
 }

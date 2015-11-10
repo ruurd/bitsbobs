@@ -2,10 +2,7 @@
 // Copyright (c) 2015 Bureau Pels. All Rights Reserved.
 //------------------------------------------------------------------------------
 
-package nl.rfpels.experiments;
-
 /**
- * And implementor implements an implementable.
+ * Experimental experiments.
  */
-public class Implementor implements Implementable {
-}
+package nl.rfpels.experiments;
