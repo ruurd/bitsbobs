@@ -9,10 +9,10 @@
         </encoder>
     </appender>
 
-    <logger name="nl.rfpels" level="debug">
+    <logger name="nl.rfpels" level="trace">
         <appender-ref ref="STDOUT" />
     </logger>
-    <root level="warn">
+    <root level="trace">
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>
