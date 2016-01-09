@@ -4,7 +4,7 @@
 package nl.rfpels.conversions;
 
 /**
- * Created by ruurd on 10-12-2015.
+ * Experimentation with conversions.
  */
 public class Converter {
 
