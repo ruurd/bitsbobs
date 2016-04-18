@@ -30,7 +30,7 @@ public class ThrowerTest {
     public void testThrowStuff() throws Exception {
         Thrower t = new Thrower();
 
-        thrown.expect(RuntimeException.class);
+        thrown.expect(Thrower.Stuff.class);
         t.throwStuff();
         fail("PC DOES WHAT?"); // <= does not get here either
     }

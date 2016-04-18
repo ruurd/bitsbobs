@@ -14,25 +14,21 @@ import java.util.List;
  */
 public class AccumulatorTask implements Runnable {
 
-    /**
-     * A list of terms.
-     */
-    List<BigInteger> terms = new ArrayList<>();
+    private List<BigInteger> terms = new ArrayList<>();
 
-    /**
-     * The result.
-     */
-    BigInteger result = null;
+    private BigInteger result = null;
 
     /**
      * Add a term to the list of terms.
      * @param term the term to add
      */
     public void addTerm(BigInteger term) {
-        terms.add(term);
+        getTerms().add(term);
     }
 
     /**
+     * The result.
+     */ /**
      * Get the result. Returns null if the task has not been run.
      * @return the result.
      */
@@ -42,9 +38,24 @@ public class AccumulatorTask implements Runnable {
 
     @Override
     public void run() {
-        result = BigInteger.ZERO;
-        for (BigInteger term: terms) {
-            result = result.add(term);
+        setResult(BigInteger.ZERO);
+        for (BigInteger term: getTerms()) {
+            setResult(getResult().add(term));
         }
+    }
+
+    /**
+     * A list of terms.
+     */
+    public List<BigInteger> getTerms() {
+        return terms;
+    }
+
+    public void setTerms(List<BigInteger> terms) {
+        this.terms = terms;
+    }
+
+    public void setResult(BigInteger result) {
+        this.result = result;
     }
 }

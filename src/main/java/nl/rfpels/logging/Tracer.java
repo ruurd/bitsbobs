@@ -12,13 +12,20 @@ import org.slf4j.Logger;
 public final class Tracer {
 
     /**
-     * Log the entry into a method passing args
+     * Private utility class constructor.
+     */
+    private Tracer() {
+        // ***NOP***
+    }
+
+    /**
+     * Log the entry into a method passing args.
      * @param logger the logger to log to
      * @param clazz the type of the object
      * @param method the method in the class
      * @param args the list of arguments
      */
-    public static void enter(Logger logger, Class clazz, String method, Object[] args) {
+    public static void enter(final Logger logger, final Class clazz, final String method, final Object[] args) {
         if (logger.isTraceEnabled()) {
             StringBuilder bldr = new StringBuilder("ENTER: ")
                     .append(clazz.getSimpleName())
@@ -42,7 +49,7 @@ public final class Tracer {
      * @param clazz the type of the object
      * @param method the method in the class
      */
-    public static void exit(Logger logger, Class clazz, String method) {
+    public static void exit(final Logger logger, final Class clazz, final String method) {
         if (logger.isTraceEnabled()) {
             StringBuilder bldr = new StringBuilder(" EXIT: ")
                     .append(clazz.getSimpleName())
@@ -55,13 +62,14 @@ public final class Tracer {
 
     /**
      * Log the exit out of a method returning T.
+     * @param <T> the type of the result
      * @param logger the logger to log to
      * @param clazz the type of the object
      * @param method the method in the class
      * @param result the result of the call
      * @return T the result returned from the method
      */
-    public static <T> T exit(Logger logger, Class clazz, String method, T result) {
+    public static <T> T exit(final Logger logger, final Class clazz, final String method, final T result) {
         if (logger.isTraceEnabled()) {
             StringBuilder bldr = new StringBuilder(" EXIT: ")
                     .append(clazz.getSimpleName())
