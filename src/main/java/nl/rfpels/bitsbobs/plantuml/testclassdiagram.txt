@@ -1,0 +1,29 @@
+@startuml
+class Meubel {
+
+}
+class Poot {
+
+}
+class Stoel {
+    -List<Poot> poten
+    +List<Poot> getPoten()
+}
+class Tafel {
+    -List<Poot> poten
+    +List<Poot> getPoten()
+}
+Meubel <|-- Stoel
+Meubel <|-- Tafel
+Onderdeel <|-- Poot
+Onderdeel <|-- Blad
+Onderdeel <|-- Leuning
+Stoel "1" *-- "1..n" Poot: staat op
+Stoel "1" *-- "1" Leuning
+Tafel "1" *-- "1..n" Poot: staat op
+Tafel "1" *-- "0..n" Stoel: staan bij
+Tafel "1" *-- "1" Blad
+Stoel "1" *--- "0..1" Tafel: staat aan
+Meubel "1" *-- "1..n" Onderdeel: gemaakt van
+
+@enduml
