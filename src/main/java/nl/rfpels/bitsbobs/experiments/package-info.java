@@ -6,3 +6,11 @@
  * Experimental experiments.
  */
 package nl.rfpels.bitsbobs.experiments;
+/*
+ * @startuml
+ * skinparam linetype ortho
+ * BaseClass <|-- DerivedClass
+ * Implementable <|--- DerivedClass
+ * Implementable <|.. Implementor
+ * @enduml
+ */

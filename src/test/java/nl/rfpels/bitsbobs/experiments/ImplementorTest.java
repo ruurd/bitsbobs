@@ -23,4 +23,11 @@ public class ImplementorTest {
         assertTrue("not an Implementable", implementor instanceof Implementable);
     }
 
+    @Test
+    public void testEnumerateImplementations() {
+        Class[] subs = Implementable.class.getClasses();
+        for (int i = 0; i < subs.length; i++) {
+            System.out.println(subs[i]);
+        }
+    }
 }

@@ -10,7 +10,7 @@ import java.util.stream.Stream;
  */
 public class TryStream {
     public static void main(String[] args) {
-        Stream<Integer> stream = Stream.iterate(10, i -> i +1);
+        Stream<Integer> stream = Stream.iterate(10, i -> i + 1);
         int first = stream.filter(i -> i < 10).findFirst().get();
         System.out.println(first);
 

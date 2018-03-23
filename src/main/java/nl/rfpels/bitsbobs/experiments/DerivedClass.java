@@ -12,8 +12,9 @@ package nl.rfpels.bitsbobs.experiments;
  * Yay!
  *
  * @startuml
- * DerivedClass <|-- BaseClass
- * DerivedClass <|.. Implementable
+ * skinparam linetype ortho
+ * Implementable <|.. DerivedClass
+ * BaseClas <|-- DerivedClass
  * @enduml
  */
 public class DerivedClass extends BaseClass implements Implementable {
